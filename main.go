@@ -201,7 +201,12 @@ func messageAttachment(event *corev2.Event) slack.Attachment {
 			{
 				Title: "Status",
 				Value: messageStatus(event),
-				Short: false,
+				Short: true,
+			},
+			{
+				Title: "Originator",
+				Value: event.Check.ProcessedBy,
+				Short: true,
 			},
 			{
 				Title: "Entity",
